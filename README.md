@@ -1,14 +1,26 @@
 # Slocker - Hook from DockerHub to Slack
 
-## Installation
+## Installation and Usage
 
-TODO: Describe the installation process
+Create a DockerFile like :
 
-## Usage
+1. `FROM julienstroheker/slocker`
+2. `ENV Slack_Hook_Url 'https://hooks.slack.com/services/XXXXX/XXXXXX/XXXXXXXXXX'`
+3. `COPY app/redirectChannel.json /usr/src/app/redirectChannel.json`
+4. `EXPOSE 8080`
+5. `CMD python2 /usr/src/app/slocker.py`
 
-1. to define a OS variable Slack_Hook_Url... / export Slack_Hook_Url='https://hooks.slack.com/services/XXXXXXXX/XXXXX/XXXXXXX'
-2. Edit the redirectChannel.json / Example : "NameUserDocker/NameRepoDocker":"#YourSlackChannel"
-3. Execute the slocker.py file / python2 slocker.py
+Build your container `Docker Build DockerFile`
+
+You'll need to modfify the redirectChannel.json with your own parameters :
+
+```{
+"NameUserDocker/NameRepoDocker":"#YourSlackChannel"
+}```
+
+Execute your container `Docker run -d -p 8080:8080 julienstroheker/slocker`
+
+Enjoy
 
 ## Contributing
 
