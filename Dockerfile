@@ -3,8 +3,8 @@
 # Based on Debian
 ############################################################
 
-# Set the base image to Debian
-FROM debian
+# Set the base image
+FROM julienstroheker/pythonflask
 
 # File Author / Maintainer
 MAINTAINER Julien Stroheker
@@ -14,15 +14,6 @@ RUN mkdir -p /usr/src/app
 
 # Set the default directory where CMD will execute
 WORKDIR /usr/src/app
-
-# Update the sources list
-RUN apt-get update
-
-# Install basic applications and Python
-RUN apt-get install -y git curl vim python python-dev python-distribute python-pip
-
-# Get flask to download and install requirements:
-RUN pip install flask
 
 # Copy the application folder inside the container
 COPY app /usr/src/app
