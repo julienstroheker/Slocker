@@ -1,4 +1,4 @@
-# Slocker - Hook from DockerHub to Slack
+# Slocker - Hook from DockerHub to Slack in a container
 
 ## Installation and Usage
 
