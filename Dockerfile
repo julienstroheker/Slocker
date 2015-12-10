@@ -1,6 +1,7 @@
 ############################################################
 # Dockerfile to build a Slocker container
 # Based on Debian
+# https://github.com/julienstroheker/Slocker
 ############################################################
 
 # Set the base image
@@ -20,8 +21,3 @@ COPY app /usr/src/app
 
 # Expose port
 EXPOSE 8080
-
-# Set the default command to execute
-# when creating a new container
-# lunch the webserver
-#CMD python2 /usr/src/app/slocker.py
